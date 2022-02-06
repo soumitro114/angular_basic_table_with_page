@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/journal/bootstrap.min.css" integrity="sha384-QDSPDoVOoSWz2ypaRUidLmLYl4RyoBWI44iA5agn6jHegBxZkNqgm2eHb6yZ5bYs" crossorigin="anonymous">
+<button type="button" (click)="task_gen()">
+Click to Generate
+</button>
+<table *ngIf="clicked">
+    <tr>
+        <th>Name</th>
+        <th>Id</th>
+        <th>Section</th>
+        <th>Supervisor</th>
+        <th>CGPA</th>
+    </tr>
+</table>
+<table *ngFor="let s of Tasks; let i = index">
+    <tr *ngIf= "count%5 === 0">
+        <div *ngIf= "i>0 && i<10">
+        <td>{{s.name}}</td>
+        <td>{{s.id}}</td>
+        <td>{{s.section}}</td>
+        <td>{{s.supervisor}}</td>
+        <td>{{s.cgpa}}</td>
+        </div>
+    </tr>
+    <tr *ngIf= "count%5 === 1">
+        <div *ngIf= "i>10 && i<20">
+        <td>{{s.name}}</td>
+        <td>{{s.id}}</td>
+        <td>{{s.section}}</td>
+        <td>{{s.supervisor}}</td>
+        <td>{{s.cgpa}}</td>
+        </div>
+    </tr>
+    <tr *ngIf= "count%5 === 2">
+        <div *ngIf= "i>20 && i<30">
+        <td>{{s.name}}</td>
+        <td>{{s.id}}</td>
+        <td>{{s.section}}</td>
+        <td>{{s.supervisor}}</td>
+        <td>{{s.cgpa}}</td>
+        </div>
+    </tr>
+    <tr *ngIf= "count%5 === 3">
+        <div *ngIf= "i>30 && i<40">
+        <td>{{s.name}}</td>
+        <td>{{s.id}}</td>
+        <td>{{s.section}}</td>
+        <td>{{s.supervisor}}</td>
+        <td>{{s.cgpa}}</td>
+        </div>
+    </tr>
+    <tr *ngIf= "count%5 === 4">
+        <div *ngIf= "i>40 && i<50">
+        <td>{{s.name}}</td>
+        <td>{{s.id}}</td>
+        <td>{{s.section}}</td>
+        <td>{{s.supervisor}}</td>
+        <td>{{s.cgpa}}</td>
+        </div>
+    </tr>
+</table>
+<div *ngIf="clicked">
+<button type="button" (click)="prev()">
+    Previous
+</button>
+<button type="button" (click)="next()">
+    Next
+</button>
+<br>
+<button type="button" (click)="rese()">
+    Reset
+</button>
+</div>

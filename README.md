@@ -1,3 +1,6 @@
+# Testing Angular
+A small piece of code to help me practice angular from scratch :shrug:
+
 # Test
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.1.
