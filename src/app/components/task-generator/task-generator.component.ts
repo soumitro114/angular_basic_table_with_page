@@ -45,7 +45,7 @@ task_gen(){
       id : 1604000 + x,
       section : 'B',
       supervisor : Items[Math.floor(Math.random() * Items.length)],
-      cgpa : 3.5}
+      cgpa : Math.floor(Math.random() * (300 - 100) + 200) / 100}
   }
 }
 rese()

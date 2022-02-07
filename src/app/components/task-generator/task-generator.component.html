@@ -1,72 +1,66 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/journal/bootstrap.min.css" integrity="sha384-QDSPDoVOoSWz2ypaRUidLmLYl4RyoBWI44iA5agn6jHegBxZkNqgm2eHb6yZ5bYs" crossorigin="anonymous">
+<div class="text-center pt-5 pb-5">
 <button type="button" (click)="task_gen()">
 Click to Generate
 </button>
-<table *ngIf="clicked">
+</div>
+<table class="table table-bordered" *ngIf="clicked">
     <tr>
-        <th>Name</th>
-        <th>Id</th>
-        <th>Section</th>
-        <th>Supervisor</th>
-        <th>CGPA</th>
+        <th scope="col">Name</th>
+        <th scope="col">Id</th>
+        <th scope="col">Section</th>
+        <th scope="col">Supervisor</th>
+        <th scope="col">CGPA</th>
     </tr>
+<tbody *ngFor="let s of Tasks; let i = index">
+    <tr *ngIf= "count%5 === 0 && i>0 && i<10">
+        
+        <td scope="row">{{s.name}}</td>
+        <td>{{s.id}}</td>
+        <td>{{s.section}}</td>
+        <td>{{s.supervisor}}</td>
+        <td>{{s.cgpa}}</td>
+        
+    </tr>
+    <tr *ngIf= "count%5 === 1 && i>10 && i<20">
+        <td scope="row">{{s.name}}</td>
+        <td>{{s.id}}</td>
+        <td>{{s.section}}</td>
+        <td>{{s.supervisor}}</td>
+        <td>{{s.cgpa}}</td>
+    </tr>
+    <tr *ngIf= "count%5 === 2 && i>20 && i<30">
+        <td scope="row">{{s.name}}</td>
+        <td>{{s.id}}</td>
+        <td>{{s.section}}</td>
+        <td>{{s.supervisor}}</td>
+        <td>{{s.cgpa}}</td>
+    </tr>
+    <tr *ngIf= "count%5 === 3 && i>30 && i<40">
+        <td scope="row">{{s.name}}</td>
+        <td>{{s.id}}</td>
+        <td>{{s.section}}</td>
+        <td>{{s.supervisor}}</td>
+        <td>{{s.cgpa}}</td>
+    </tr>
+    <tr *ngIf= "count%5 === 4 && i>40 && i<50">
+        <td scope="row">{{s.name}}</td>
+        <td>{{s.id}}</td>
+        <td>{{s.section}}</td>
+        <td>{{s.supervisor}}</td>
+        <td>{{s.cgpa}}</td>
+    </tr>
+    </tbody>
 </table>
-<table *ngFor="let s of Tasks; let i = index">
-    <tr *ngIf= "count%5 === 0">
-        <div *ngIf= "i>0 && i<10">
-        <td>{{s.name}}</td>
-        <td>{{s.id}}</td>
-        <td>{{s.section}}</td>
-        <td>{{s.supervisor}}</td>
-        <td>{{s.cgpa}}</td>
-        </div>
-    </tr>
-    <tr *ngIf= "count%5 === 1">
-        <div *ngIf= "i>10 && i<20">
-        <td>{{s.name}}</td>
-        <td>{{s.id}}</td>
-        <td>{{s.section}}</td>
-        <td>{{s.supervisor}}</td>
-        <td>{{s.cgpa}}</td>
-        </div>
-    </tr>
-    <tr *ngIf= "count%5 === 2">
-        <div *ngIf= "i>20 && i<30">
-        <td>{{s.name}}</td>
-        <td>{{s.id}}</td>
-        <td>{{s.section}}</td>
-        <td>{{s.supervisor}}</td>
-        <td>{{s.cgpa}}</td>
-        </div>
-    </tr>
-    <tr *ngIf= "count%5 === 3">
-        <div *ngIf= "i>30 && i<40">
-        <td>{{s.name}}</td>
-        <td>{{s.id}}</td>
-        <td>{{s.section}}</td>
-        <td>{{s.supervisor}}</td>
-        <td>{{s.cgpa}}</td>
-        </div>
-    </tr>
-    <tr *ngIf= "count%5 === 4">
-        <div *ngIf= "i>40 && i<50">
-        <td>{{s.name}}</td>
-        <td>{{s.id}}</td>
-        <td>{{s.section}}</td>
-        <td>{{s.supervisor}}</td>
-        <td>{{s.cgpa}}</td>
-        </div>
-    </tr>
-</table>
-<div *ngIf="clicked">
-<button type="button" (click)="prev()">
+<div *ngIf="clicked" class="text-center">
+<button type="button" class="btn mr-5" (click)="prev()">
     Previous
 </button>
-<button type="button" (click)="next()">
+<button type="button" class="btn" (click)="next()">
     Next
 </button>
 <br>
-<button type="button" (click)="rese()">
+<br>
+<button type="button" class="btn btn-danger" (click)="rese()">
     Reset
 </button>
 </div>
