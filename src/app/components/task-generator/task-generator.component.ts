@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { gen_taskk } from 'src/mock-tasks';
-// import { Tasks } from 'src/mock-tasks';
 import { Items } from 'src/supervisor_list';
 import { Task } from 'src/task';
 
@@ -13,6 +11,7 @@ import { Task } from 'src/task';
 export class TaskGeneratorComponent implements OnInit {
 
   public Tasks : Task[] = []
+  public TaskDisplay : Task[] = []
   count : number = 0
   clicked : boolean = false
   
@@ -24,6 +23,7 @@ export class TaskGeneratorComponent implements OnInit {
   next()
   {
     this.count++
+    this.display()
   }
   
   prev()
@@ -31,11 +31,12 @@ export class TaskGeneratorComponent implements OnInit {
     this.count--
     if(this.count === -1)
       this.count = 4
+    this.display()
   }
 
 task_gen(){
   
-  this.clicked =true
+  this.clicked = true
 
   for(let x:number = 0; x< 50 ; x++)
   {
@@ -47,6 +48,8 @@ task_gen(){
       supervisor : Items[Math.floor(Math.random() * Items.length)],
       cgpa : Math.floor(Math.random() * (300 - 100) + 200) / 100}
   }
+  this.display()
+
 }
 rese()
 {
@@ -54,7 +57,8 @@ rese()
   this.Tasks = []
 }
 
-
-
-
+display(){
+  var sliceNumber:number = (this.count % 5) * 10
+  this.TaskDisplay = this.Tasks.slice(sliceNumber,sliceNumber+10)
+}
 }

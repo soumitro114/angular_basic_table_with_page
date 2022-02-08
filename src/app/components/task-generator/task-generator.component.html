@@ -11,44 +11,15 @@ Click to Generate
         <th scope="col">Supervisor</th>
         <th scope="col">CGPA</th>
     </tr>
-<tbody *ngFor="let s of Tasks; let i = index">
-    <tr *ngIf= "count%5 === 0 && i>0 && i<10">
-        
-        <td scope="row">{{s.name}}</td>
-        <td>{{s.id}}</td>
-        <td>{{s.section}}</td>
-        <td>{{s.supervisor}}</td>
-        <td>{{s.cgpa}}</td>
-        
+<tbody *ngFor="let task of TaskDisplay">
+    <tr>
+        <td scope="row">{{task.name}}</td>
+        <td>{{task.id}}</td>
+        <td>{{task.section}}</td>
+        <td>{{task.supervisor}}</td>
+        <td>{{task.cgpa}}</td>
     </tr>
-    <tr *ngIf= "count%5 === 1 && i>10 && i<20">
-        <td scope="row">{{s.name}}</td>
-        <td>{{s.id}}</td>
-        <td>{{s.section}}</td>
-        <td>{{s.supervisor}}</td>
-        <td>{{s.cgpa}}</td>
-    </tr>
-    <tr *ngIf= "count%5 === 2 && i>20 && i<30">
-        <td scope="row">{{s.name}}</td>
-        <td>{{s.id}}</td>
-        <td>{{s.section}}</td>
-        <td>{{s.supervisor}}</td>
-        <td>{{s.cgpa}}</td>
-    </tr>
-    <tr *ngIf= "count%5 === 3 && i>30 && i<40">
-        <td scope="row">{{s.name}}</td>
-        <td>{{s.id}}</td>
-        <td>{{s.section}}</td>
-        <td>{{s.supervisor}}</td>
-        <td>{{s.cgpa}}</td>
-    </tr>
-    <tr *ngIf= "count%5 === 4 && i>40 && i<50">
-        <td scope="row">{{s.name}}</td>
-        <td>{{s.id}}</td>
-        <td>{{s.section}}</td>
-        <td>{{s.supervisor}}</td>
-        <td>{{s.cgpa}}</td>
-    </tr>
+    
     </tbody>
 </table>
 <div *ngIf="clicked" class="text-center">
